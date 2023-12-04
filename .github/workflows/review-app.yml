@@ -82,6 +82,7 @@ jobs:
       - name: Delete existing app
         run: clever link $APP_ID
       - run: echo "${{ env.BRANCH_NAME }}" | clever delete --alias doc-${{ env.BRANCH_NAME }}
+  # Deploy new app on push
   deploy_on_sync:
     needs: delete
     runs-on: ubuntu-latest

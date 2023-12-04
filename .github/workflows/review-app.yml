@@ -39,7 +39,7 @@ jobs:
         run: npm install -g clever-tools
       - name: Create app
         run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
-      - run: clever create --type static-apache ${{ env.BRANCH_NAME }} --alias ${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
+      - run: clever create --type static-apache doc-${{ env.BRANCH_NAME }} --alias doc-${{ env.BRANCH_NAME }} --region par --org ${{secrets.ORGA_ID}}
       - run: clever env set CC_PRE_BUILD_HOOK "./clevercloud-deploy-script.sh"
       - run: clever env set CC_WEBROOT "/public"
       - run: clever env set HUGO_ENV "production"
@@ -50,6 +50,7 @@ jobs:
       - run: clever domain add clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
       - name: Deploy
         run: clever deploy
+      - run: ls -a
       - name: Comment PR
         uses: actions/github-script@v5
         with:
@@ -70,4 +71,4 @@ jobs:
     steps:
       - run: npm install -g clever-tools
       - run: clever login --token ${{ env.CLEVER_TOKEN }} --secret ${{ env.CLEVER_SECRET }}
-      - run: echo "${{ env.BRANCH_NAME }}" | clever delete --alias ${{ env.BRANCH_NAME }}
+      - run: echo "doc-${{ env.BRANCH_NAME }}" | clever delete --alias doc-${{ env.BRANCH_NAME }}

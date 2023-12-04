@@ -56,7 +56,6 @@ jobs:
         with:
           name: clever-config
           path: ${{ github.workspace }}/clever.json
-
   # Delete app on new push or when PR is closed
   delete:
     runs-on: ubuntu-latest

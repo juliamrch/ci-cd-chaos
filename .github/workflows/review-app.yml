@@ -72,7 +72,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   delete:
     runs-on: ubuntu-latest
-    if: (github.event_name == 'push' && github.ref == format('refs/heads/{0}', github.head_ref)) || (github.event_name == 'pull_request' && github.event.action == 'closed')
+    if: (github.event_name == 'push' && github.head_ref == github.ref_name) || (github.event_name == 'pull_request' && github.event.action == 'closed')
     steps:
       - name: Install jq
         run: sudo apt-get install jq

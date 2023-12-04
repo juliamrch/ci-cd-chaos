@@ -55,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: clever-config
-          path: path/to/clever.json
+          path: ${{ github.workspace }}/clever.json
       - name: Comment PR
         uses: actions/github-script@v5
         with:

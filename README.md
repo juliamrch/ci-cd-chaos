@@ -67,4 +67,3 @@ Follox these instructions to contibute to the doc.
 
 Local site is displayed on http://localhost:1313
 
-Note 8

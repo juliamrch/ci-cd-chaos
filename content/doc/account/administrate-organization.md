@@ -16,7 +16,7 @@ In the Clever Cloud Web Console, select **Add an organization** in the left menu
 
 Give it a name, description, specify if it is a company and add billing informations.
 
-## Administrate an organization
+## Administrate the perfect organization
 
 By clicking on you application name, a new left menu will open itself. 
 

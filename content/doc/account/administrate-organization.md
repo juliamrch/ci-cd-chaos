@@ -10,7 +10,7 @@ keywords:
 - organization
 ---
 
-## Create an organization
+## Create an organisation
 
 In the Clever Cloud Web Console, select **Add an organization** in the left menu.
 

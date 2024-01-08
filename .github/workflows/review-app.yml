@@ -26,19 +26,24 @@ jobs:
       #url: clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
     steps:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: List all branches from the remote
-        run: git ls-remote --heads ${{ github.event.pull_request.head.repo.full_name }}
-      - name: Check out PR code
+      - name: Check out main branch code if PR is from a fork
+        if: github.event.pull_request.head.repo.fork
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: main
+      - name: Check out PR code if PR is not from a fork
+        if: github.event.pull_request.head.repo.fork == false
+        uses: actions/checkout@v4
+        with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
       - name: Configure Git
+        if: github.event.pull_request.head.repo.fork
         run: |
           git config user.email "julia.navarro@clever-cloud.com"
           git config user.name "Julia"    
       - name: Setup SSH
+        if: github.event.pull_request.head.repo.fork
         uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -93,12 +98,16 @@ jobs:
     steps:
       - name: List all branches from the remote
         run: git ls-remote --heads ${{ github.event.pull_request.head.repo.full_name }}
-      - name: Check out PR code
+      - name: Check out main branch code if PR is from a fork
+        if: github.event.pull_request.head.repo.fork
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: main
+      - name: Check out PR code if PR is not from a fork
+        if: github.event.pull_request.head.repo.fork == false
+        uses: actions/checkout@v4
+        with:
           ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
       - name: Configure Git
         run: |
           git config user.email "julia.navarro@clever-cloud.com"

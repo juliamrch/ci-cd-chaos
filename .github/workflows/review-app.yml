@@ -26,9 +26,12 @@ jobs:
       #url: clever-doc-preprod-${{ env.BRANCH_NAME }}.cleverapps.io
     steps:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: List all branches from the remote
+        run: git ls-remote --heads ${{ github.event.pull_request.head.repo.full_name }}
       - name: Check out repository code
         uses: actions/checkout@v4
         with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
       - name: Configure Git
@@ -88,9 +91,12 @@ jobs:
       contents: read
       pull-requests: write
     steps:
+      - name: List all branches from the remote
+        run: git ls-remote --heads ${{ github.event.pull_request.head.repo.full_name }}
       - name: Check out repository code
         uses: actions/checkout@v4
         with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
       - name: Configure Git

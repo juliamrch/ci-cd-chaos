@@ -28,7 +28,7 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: List all branches from the remote
         run: git ls-remote --heads ${{ github.event.pull_request.head.repo.full_name }}
-      - name: Check out repository code
+      - name: Check out PR code
         uses: actions/checkout@v4
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
@@ -93,7 +93,7 @@ jobs:
     steps:
       - name: List all branches from the remote
         run: git ls-remote --heads ${{ github.event.pull_request.head.repo.full_name }}
-      - name: Check out repository code
+      - name: Check out PR code
         uses: actions/checkout@v4
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}

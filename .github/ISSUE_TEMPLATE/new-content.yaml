@@ -12,9 +12,9 @@ body:
       value: |
         Thanks for taking the time to fill out this new content form!
   - type: dropdown
-    id: version
+    id: related-issue
     attributes:
-      label: Version
+      label: Checking for related issue
       description: "Have you checked your request hasn't been already addressed in another issue?"
       options:
         - "Yes"

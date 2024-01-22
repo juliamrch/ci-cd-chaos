@@ -155,3 +155,5 @@ Example :
 ```go
 {{< figure src="/images/changelog/console-new-ip-par.png" caption="The new IP shown in the console" width="800px">}}
 ```
+
+lololilol

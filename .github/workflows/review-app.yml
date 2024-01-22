@@ -8,10 +8,6 @@ on:
 
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-  CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
-  CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
-  ORGA_ID: ${{ secrets.ORGA_ID }}
-  HUGO_VERSION: ${{ secrets.HUGO_VERSION }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
@@ -44,10 +40,10 @@ jobs:
         run: npm install -g clever-tools
       - name: Create app and configure app
         env:
-          CLEVER_SECRET: ${{ env.CLEVER_SECRET }}
-          CLEVER_TOKEN: ${{ env.CLEVER_TOKEN }}
-          ORGA_ID: ${{ env.ORGA_ID }}
-          HUGO_VERSION: ${{ env.HUGO_VERSION }}
+          CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
+          CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
+          ORGA_ID: ${{ secrets.ORGA_ID }}
+          HUGO_VERSION: ${{ secrets.HUGO_VERSION }}
         run: | 
           clever login --token "$CLEVER_TOKEN" --secret "$CLEVER_SECRET"
           clever create --type static-apache doc-review-${{ env.BRANCH_NAME }} --alias doc-review-${{ env.BRANCH_NAME }} --region par --org "$ORGA_ID"

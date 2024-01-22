@@ -43,6 +43,11 @@ jobs:
       - name: install clever-tools
         run: npm install -g clever-tools
       - name: Create app and configure app
+        env:
+          CLEVER_SECRET: ${{ env.CLEVER_SECRET }}
+          CLEVER_TOKEN: ${{ env.CLEVER_TOKEN }}
+          ORGA_ID: ${{ env.ORGA_ID }}
+          HUGO_VERSION: ${{ env.HUGO_VERSION }}
         run: | 
           clever login --token "$CLEVER_TOKEN" --secret "$CLEVER_SECRET"
           clever create --type static-apache doc-review-${{ env.BRANCH_NAME }} --alias doc-review-${{ env.BRANCH_NAME }} --region par --org "$ORGA_ID"

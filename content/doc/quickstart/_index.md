@@ -214,6 +214,8 @@ git push <remote-name> <branch-name>:master
 
 {{% /details %}}
 
+This doc is awesome and will change the world!!!
+
 {{% details title= "GitHub ⋅ Does not appear to be a git repository" closed="true" %}}
 You can't directly push to an application created on Clever Cloud as a GitHub app: in this case, only the automatic deployment from GitHub is henceforth allowed.
 

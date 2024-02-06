@@ -12,6 +12,6 @@ jobs:
       - uses: errata-ai/vale-action@reviewdog
         with:
           reporter: github-pr-check # How results are reported
-          filter_mode: diff_contex # Consider only changes in the context of the PR diff
+          filter_mode: diff_context # Consider only changes in the context of the PR diff
           fail_on_error: true # Optional: fail the action if errors are found
           token: ${{ secrets.GITHUB_TOKEN }} # G

@@ -17,6 +17,8 @@ type: docs
 
 MySQL is an open-source relational database management system (RDBMS).
 
+Another awesome comment!
+
 ## Versions
 
 The version currently installed by the add-on is :

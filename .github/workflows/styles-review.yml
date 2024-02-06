@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install xsltproc
-        run: sudo apt-get update && sudo apt-get install -y xsltproc
+      #- name: Install xsltproc
+      #  run: sudo apt-get update && sudo apt-get install -y xsltproc
       - uses: errata-ai/vale-action@reviewdog
         with:
           reporter: github-pr-check # How results are reported

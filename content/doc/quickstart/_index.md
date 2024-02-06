@@ -17,6 +17,8 @@ type: "docs"
 
 ## Create a Clever Cloud Account
 
+What an awesome doc!!!
+
 The API of Clever Cloud uses OAuth 1 to perform authentication actions.
 There are two ways to signup to Clever Cloud: **email** or **GitHub login**.
 

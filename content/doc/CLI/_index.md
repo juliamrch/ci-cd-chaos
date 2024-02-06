@@ -16,6 +16,7 @@ aliases:
 type: "docs"
 comments: false
 ---
+This doc is super awesome!
 
 {{< hextra/hero-subtitle >}}
   Manage your applications from your terminal.

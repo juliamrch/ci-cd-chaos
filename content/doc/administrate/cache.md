@@ -15,6 +15,8 @@ type: docs
 
 ## Overview
 
+Another awesome comment!
+
 [Varnish](https://www.varnish-cache.org/) is a HTTP proxy-cache, which works as a reverse proxy between your application
 and the client. Following rules defined by the user, Varnish will cache the data of an application to reduce the load on its server. We use **Varnish 6.6.0 and varnish-modules 0.18.0**.
 

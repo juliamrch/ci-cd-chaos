@@ -15,6 +15,8 @@ type: "docs"
   Clever Cloud provides an automated hosting platform for developpers. Deploy your app easily and launch dependencies without having to worry about the infrastructure set up. Follow this guide to get ready to deploy quickly as you learn the basics of Clever Cloud.
 {{< /hextra/hero-subtitle >}}
 
+What an awesome super doc!!!
+
 ## Create a Clever Cloud Account
 
 The API of Clever Cloud uses OAuth 1 to perform authentication actions.

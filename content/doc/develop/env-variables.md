@@ -17,6 +17,8 @@ type: docs
 Clever Cloud allows you to define environment variables that will be
 injected in your application's environment.
 
+Another dumb comment omg!!
+
 ## How are variables defined?
 
 Variables are defined on a per-application basis. They are defined in four ways:

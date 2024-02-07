@@ -14,6 +14,8 @@ type: docs
 
 Would you like to contribute to this documentation?
 
+Look! An awesome comment that Vale will love!!!
+
 ## Before writing something new
 
 Before you start writing something new please create a [Github issue](https://github.com/CleverCloud/documentation/issues) so we can talk about it. Moslty to make sure someone is not already working on the same thing.

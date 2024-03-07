@@ -16,6 +16,8 @@ type: docs
 
 ## How to Configure and Deploy [...] on Clever Cloud
 
+After remove action added to the ellipsis style.
+
 {{% steps %}}
 
 ###

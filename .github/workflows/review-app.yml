@@ -16,7 +16,7 @@ jobs:
     environment:
       name: PR review apps
     steps:
-      - uses: juliamrch/clever-cloud-review-app@v2.0-beta.0
+      - uses: juliamrch/clever-cloud-review-app@v2.0-beta.1
         with:
           orgaID: ${{ secrets.ORGA_ID }}
           type: static-apache

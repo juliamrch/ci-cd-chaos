@@ -16,6 +16,9 @@ jobs:
     environment:
       name: PR review apps
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: juliamrch/clever-cloud-review-app@v2.0-beta-1
         with:
           orgaID: ${{ secrets.ORGA_ID }}

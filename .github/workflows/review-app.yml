@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: juliamrch/clever-review-app@0.1.0
+      - uses: juliamrch/clever-review-app@0.1.1
         with:
           orgaID: ${{ secrets.ORGA_ID }}
           type: static-apache

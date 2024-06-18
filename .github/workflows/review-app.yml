@@ -21,8 +21,7 @@ jobs:
           fetch-depth: 0
       - uses: juliamrch/clever-review-app@0.1.3
         with:
-          orgaID: ${{ secrets.ORGA_ID }}
-          type: static-apache
+          test: version
         env:
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}

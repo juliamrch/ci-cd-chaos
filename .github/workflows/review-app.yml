@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: juliamrch/clever-review-app@0.1.9
+      - uses: juliamrch/clever-review-app@0.1.10
         with:
           test: version
         env:

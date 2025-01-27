@@ -12,7 +12,7 @@ jobs:
         pull-requests: write
         contents: read
     steps:
-      - uses: actions/checkout@doc-iss346
+      - uses: actions/checkout@v4
         if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
@@ -20,15 +20,16 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
       - name: Create review app
-        uses: CleverCloud/clever-cloud-review-app@input-domain
+        uses: CleverCloud/clever-cloud-review-app@doc-iss346
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
           ORGA_ID: ${{ secrets.ORGA_ID }}
           GH_CC_RUN_SUCCEEDED_HOOK: ${{ secrets.CC_RUN_SUCCEEDED_HOOK }}
+          CC_WEBROOT: "/content"
         with:
           type: 'static-apache'
           set-env: true
           environment: 'review'
-          watch-path: '.github/'
+          watch-path: 'content/'

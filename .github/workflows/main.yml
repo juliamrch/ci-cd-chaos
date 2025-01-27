@@ -12,7 +12,7 @@ jobs:
         pull-requests: write
         contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@doc-iss346
         if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize' }}
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
@@ -31,3 +31,4 @@ jobs:
           type: 'static-apache'
           set-env: true
           environment: 'review'
+          watch-path: '.github/'

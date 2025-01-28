@@ -1,3 +1,4 @@
+test : deploy
 
 # Review Apps on Clever Cloud
 

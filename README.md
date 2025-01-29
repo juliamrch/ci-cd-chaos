@@ -1,4 +1,3 @@
-t
 
 # Review Apps on Clever Cloud
 

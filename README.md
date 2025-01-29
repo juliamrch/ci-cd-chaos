@@ -1,5 +1,3 @@
-test 3rd party comment action
-test update comment
 
 # Review Apps on Clever Cloud
 

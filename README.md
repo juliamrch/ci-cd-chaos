@@ -1,4 +1,3 @@
-beta test 
 
 # Review Apps on Clever Cloud
 

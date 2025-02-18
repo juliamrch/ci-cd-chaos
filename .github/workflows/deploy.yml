@@ -18,11 +18,11 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: build-${{ github.event.pull_request.head.sha }}
+          name: build-${{ github.event.workflow_run.head_commit.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - run: |
-          unzip build-${{ github.event.pull_request.head.sha }}
+          unzip build-${{ github.event.workflow_run.head_commit.id }}
           ls -a
 #          cd build-${{ github.event.pull_request.head.sha }}
 # Deploy the artifact to Clever Cloud

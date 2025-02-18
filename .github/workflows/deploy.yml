@@ -14,12 +14,15 @@ jobs:
       contents: write
     steps:
       - name: Wait for build to succeed
-        uses: lewagon/wait-on-check-action@v1.3.1
+        uses: yandzee/wait-action@main
+        env:
+          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          check-name: 'Build in Fork Context'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
+          # Required param
+          head-sha: ${{ github.event.pull_request.head.sha }}
+          poll-delay: 10s
+          # Comma separated paths to workflow files
+          workflows: .github/workflows/build.yml
       - uses: actions/download-artifact@v4
         with:
           name: build-${{ github.event.pull_request.head.sha }}

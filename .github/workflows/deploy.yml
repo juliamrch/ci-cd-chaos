@@ -21,10 +21,11 @@ jobs:
           name: build-${{ github.event.workflow_run.head_commit.id }}
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: .
 
-      - run: |
-          unzip build-${{ github.event.workflow_run.head_commit.id }}.zip
-          ls -a
+      - run: ls -a
+#          unzip build-${{ github.event.workflow_run.head_commit.id }}.zip
+          
 #          cd build-${{ github.event.pull_request.head.sha }}
 # Deploy the artifact to Clever Cloud
 # Use CC_WEBROOT or git init in the artifact directory?

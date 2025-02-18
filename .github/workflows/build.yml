@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-${{ github.event.pull_request.head.sha }}
-          path: ./public/** 
+          path: ./**
       
       - name: Output artifact ID
         run:  echo 'Artifact name is ${{ github.sha }}, ID is ${{ steps.artifact-upload-step.outputs.artifact-id }}'

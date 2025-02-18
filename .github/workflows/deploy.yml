@@ -23,7 +23,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: .
 
-      - run: ls -a
+      - run: ls -a developers
 #          unzip build-${{ github.event.workflow_run.head_commit.id }}.zip
           
 #          cd build-${{ github.event.pull_request.head.sha }}

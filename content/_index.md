@@ -1,6 +1,6 @@
 ---
 type: docs
-title: Clever Cloud Documentation
+title: Clever Cloud Documentation Tested
 layout: hextra-home
 disableSidebar: false
 type: default

@@ -8,10 +8,11 @@ on:
 jobs:
   review-app:
     runs-on: ubuntu-latest
-    if: 
     permissions:
       actions: read
       contents: write
+      issues: write
+      pull-requests: write
     steps:
       - name: Wait on Workflow
         id: wait-workflow

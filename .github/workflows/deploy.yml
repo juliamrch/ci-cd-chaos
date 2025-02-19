@@ -13,6 +13,7 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
+
     steps:
       - name: Wait on Workflow
         id: wait-workflow
@@ -39,7 +40,7 @@ jobs:
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
           ORGA_ID: ${{ secrets.ORGA_ID }}
-          GH_CC_WEBROOT: '/public'
+          GH_CC_WEBROOT: '/review-app'
         with:
           type: static-apache
           comment: true

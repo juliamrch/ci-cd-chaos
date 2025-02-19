@@ -1,4 +1,3 @@
-
 # Clever Cloud Documentation
 
 This is a [Hugo](https://gohugo.io) project with a theme called [Hextra](https://github.com/imfing/hextra) added as a module.</p>
@@ -174,3 +173,9 @@ Partials are reusable content you can include in several pages. To use this feat
 
 1. Create a new partial in `/layouts/shortcodes/content`
 2. Add it to the relevant pages like this: `{{% content/your-partial %}}`
+
+## This is random
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas luctus quam, ac efficitur ipsum. Nulla nec arcu dictum, convallis turpis et, mollis risus. Praesent sit amet sapien varius, iaculis quam nec, feugiat velit. Nullam vel condimentum mauris, eu feugiat libero. Nulla pulvinar pulvinar sodales. Ut vestibulum consequat egestas. Donec eu hendrerit nulla, id interdum metus. Nullam velit mi, consequat id faucibus at, tempor in odio. Vivamus varius leo ut odio tincidunt vulputate. Nulla sit amet mauris vulputate, scelerisque sapien sed, cursus leo. Duis sit amet feugiat justo, nec molestie libero. Curabitur congue ante a placerat ultrices.
+
+

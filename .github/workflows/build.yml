@@ -21,6 +21,9 @@ jobs:
           fetch-depth: 0
 
       - name: Build fork
+        env:
+          HUGO_VERSION: '0.140.2'
+          HEXTRA_VERSION: 'v0.9.4'
         run: ./clevercloud-deploy-script.sh
       
 #      - name: Prepare review-app directory

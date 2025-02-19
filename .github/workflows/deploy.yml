@@ -24,15 +24,17 @@ jobs:
           interval: 5
           timeout: 60
           sha: ${{ github.event.pull_request.head.sha || github.sha }}
+      - run: mkdir -p review-app
       - uses: actions/download-artifact@v4
         with:
           name: build-${{ github.event.pull_request.head.sha }}
           run-id: ${{ steps.wait-workflow.outputs.run-id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path: .
+          path: /review-app
 
       - run: |
-          ls -a
+          ls -a review-app
+          cd review-app
       - name: Deploy on CC
         uses: CleverCloud/clever-cloud-review-app@optional-comment
         env:
@@ -40,7 +42,6 @@ jobs:
           CLEVER_SECRET: ${{ secrets.CLEVER_SECRET }}
           CLEVER_TOKEN: ${{ secrets.CLEVER_TOKEN }}
           ORGA_ID: ${{ secrets.ORGA_ID }}
-          GH_CC_WEBROOT: '/review-app'
         with:
           type: static-apache
           comment: true

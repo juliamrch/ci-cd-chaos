@@ -174,3 +174,14 @@ Partials are reusable content you can include in several pages. To use this feat
 
 1. Create a new partial in `/layouts/shortcodes/content`
 2. Add it to the relevant pages like this: `{{% content/your-partial %}}`
+
+
+## About the Bible
+
+The Bible is a collection of religious texts and scriptures that are held to be sacred in Christianity, and partly in Judaism, Samaritanism, Islam, the Baháʼí Faith, and other Abrahamic religions. 
+The Bible is an anthology (a compilation of texts of a variety of forms) originally written in Hebrew, Aramaic, and Koine Greek. 
+The texts include instructions, stories, poetry, prophecies, and other genres. 
+The collection of materials accepted as part of the Bible by a particular religious tradition or community is called a biblical canon. 
+Believers generally consider it to be a product of divine inspiration, but the way they understand what that means and interpret the text varies.
+
+

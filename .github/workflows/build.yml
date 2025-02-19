@@ -23,6 +23,7 @@ jobs:
         with:
           name: build-${{ github.event.pull_request.head.sha }}
           path: ./**
+          include-hidden-files: true
       
       - name: Output artifact ID
         run:  echo 'Artifact name is ${{ github.sha }}, ID is ${{ steps.artifact-upload-step.outputs.artifact-id }}'

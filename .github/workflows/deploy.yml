@@ -41,7 +41,8 @@ jobs:
           GH_CC_WEBROOT: '/public'
         with:
           type: static-apache
-          comment: false
+          comment: true
+          domain: '${{ github.event.pull_request.base.repo.name }}-PR-${{ github.event.number }}.cleverapps.io/developers'
 # Deploy the artifact to Clever Cloud
 # Use CC_WEBROOT or git init in the artifact directory?
 # Tests: ls -a in the runner

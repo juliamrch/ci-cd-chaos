@@ -23,18 +23,18 @@ jobs:
       - name: Build fork
         run: ./clevercloud-deploy-script.sh
       
-      - name: Prepare review-app directory
-        run: |
-          mkdir -p review-app
-          cp -r public/* review-app/
-          cp -r .git review-app/
+#      - name: Prepare review-app directory
+#        run: |
+#          mkdir -p review-app
+#          cp -r public/* review-app/
+#          cp -r .git review-app/
       
       - name: Upload artifact
         id: artifact-upload-step
         uses: actions/upload-artifact@v4
         with:
           name: build-${{ github.event.pull_request.head.sha }}
-          path: review-app/
+          path: public/
           include-hidden-files: true
       
       - name: Output artifact ID

@@ -24,17 +24,21 @@ jobs:
           interval: 5
           timeout: 60
           sha: ${{ github.event.pull_request.head.sha || github.sha }}
-      - run: mkdir -p review-app
+#      - run: mkdir -p review-app
       - uses: actions/download-artifact@v4
         with:
           name: build-${{ github.event.pull_request.head.sha }}
           run-id: ${{ steps.wait-workflow.outputs.run-id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path: review-app
 
-      - run: |
-          ls -a review-app
-          cd review-app
+      - name: Commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ls -a public
+          git init
+          git add .
+          git commit -m "Deploy PR ${{ github.event.number }}"
       - name: Deploy on CC
         uses: CleverCloud/clever-cloud-review-app@optional-comment
         env:

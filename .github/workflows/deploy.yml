@@ -38,6 +38,8 @@ jobs:
           ls -a
           git init
           git add .
+          git config --global user.name "GH runner ${{ steps.wait-workflow.outputs.run-id }}"
+          git config --global user.email "you@example.com"
           git commit -m "Deploy PR ${{ github.event.number }}"
       - name: Deploy on CC
         uses: CleverCloud/clever-cloud-review-app@optional-comment

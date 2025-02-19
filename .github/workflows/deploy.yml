@@ -30,7 +30,7 @@ jobs:
           name: build-${{ github.event.pull_request.head.sha }}
           run-id: ${{ steps.wait-workflow.outputs.run-id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path: /review-app
+          path: review-app
 
       - run: |
           ls -a review-app
